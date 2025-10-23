@@ -14,6 +14,7 @@ export const PDFViewer = ({pdfFile}) => {
     const [pageNumber, setPageNumber] = useState(1);
     const [scale, setScale] = useState(1.0);
 
+
     const goToPreviousPage = () =>{
         setPageNumber(prev => Math.max(prev-1 , 1));
     };
@@ -35,18 +36,11 @@ export const PDFViewer = ({pdfFile}) => {
         setPageNumber(1);
 }
 
-    if(!pdfFile){
-        return (
-            <div className='flex items-center justify-center h-full bg-gray-50'>
-                <p className='text-gray-500'>No PDF loaded. Please upload a PDF to begin</p>
-            </div>
-        )
-    }
-
+    
 
     return (
     <div className='flex flex-col bg-gray-50'>
-        <div className='bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between sticky '>
+        <div className='bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between sticky z-10 top-19'>
             <div className='flex items-center gap-2'>
                 <button 
                     onClick={goToPreviousPage}
@@ -89,8 +83,10 @@ export const PDFViewer = ({pdfFile}) => {
                 </button>
             </div>
         </div>
-        <div className='flex-1 overflow-auto p-4'>
-            <div className='flex justify-center'>
+
+
+        <div className='flex-1 overflow-y-auto p-4'>
+            <div className='flex justify-center '>
                 <Document
                     file={pdfFile}
                     onLoadSuccess={onDocumentLoadSuccess}

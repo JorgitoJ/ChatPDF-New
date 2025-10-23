@@ -2,7 +2,7 @@ import { Command } from 'lucide-react'
 
 export const Header = () => {
   return (
-    <div className='py-3 md:px-50 px-20 sticky top-0 bg-white z-20 border-b border-gray-200'>
+    <div className='py-3 md:px-50 px-20 sticky top-0 z-20 border-b border-gray-200 backdrop-blur-sm '>
         <div className='flex gap-1 items-center py-1'>
             <div>
                 <Command size={32} color="#207CD6" strokeWidth={2} className='' />
