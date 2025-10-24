@@ -32,19 +32,8 @@ function UploadPDF({ onFileSelect }) {
       onFileSelect(file);
     }
   };
+
   
-  const handleFileInput = (e) => {
-    const file = e.target.files[0];
-    if (file && file.type === 'application/pdf') {
-      processFile(file);
-    }
-  };
-
-  const processFile = (file) => {
-    setFileName(file.name);
-    onFileSelect(file);
-  };
-
   return (
     <div
       onDragEnter={handleDrag}
@@ -70,14 +59,18 @@ function UploadPDF({ onFileSelect }) {
         onChange={handleChange}
         className="hidden"
       />
-      <label htmlFor="file-upload"> 
-        <button
-          onClick={handleFileInput}
+
+        <label htmlFor="file-upload"
           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors cursor-pointer">
-          <input type="file" />
-          Browse Files
-        </button>
-      </label>
+          {fileName ? 'Change File' : 'Browse Files'}
+        </label>
+       
+        <input 
+          type="file"
+          id='file-upload'
+          onChange={handleChange}
+          className='hidden' />
+        
     </div>
   );
 }

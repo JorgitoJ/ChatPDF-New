@@ -9,12 +9,9 @@ export const Desk = () => {
   
   const handleFileSelect = (file) => {
     console.log('Archivo seleccionado:', file);
-    // Aquí puedes enviarlo al backend o procesarlo
-    // const fileURL = URL.createObjectURL(file);
-    // console.log('URL del archivo:', fileURL);
+    
     const fileInfo = {
       name: file.name,
-      // url: fileURL,
       size: file.size,
       file: file
     };
