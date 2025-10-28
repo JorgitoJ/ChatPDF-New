@@ -30,9 +30,11 @@ export const ChatBox = () => {
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4">
+
+    <div className='flex-1 overflow-y-auto p-4'>
+      <div className="min-h-full flex flex-col justify-end">
         {messages.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-full text-center">
+          <div className="flex flex-col items-center text-center justify-center h-full">
             <div className="text-gray-400 mb-2">💬</div>
             <p className="text-gray-500 text-sm">
               Haz una pregunta sobre tu PDF para comenzar la conversación
@@ -71,7 +73,7 @@ export const ChatBox = () => {
         )}
         <div ref={messagesEndRef} />
       </div>
-
+    </div>
       <InputBox />
     </div>
   );

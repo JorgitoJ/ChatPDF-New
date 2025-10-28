@@ -12,7 +12,9 @@ export const ChatInterface = () => {
                 <div className='place-items-center grid border rounded-xl border-gray-400 m-4'>
                     <p className='text-gray-600 '>No PDF loaded. Please upload a PDF to begin</p>
                 </div>
-                <ChatBox className=""/>
+                <div className='h-full overflow-hidden'>
+                    <ChatBox />
+                </div>
             </div>
         )
     }
